@@ -10,7 +10,7 @@ export default defineConfig({
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:5000',
+        target: 'http://',
         changeOrigin: true,
       },
     },

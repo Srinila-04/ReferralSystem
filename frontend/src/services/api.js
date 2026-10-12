@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://referral-management-backend-0mgl.onrender.com';
+
 const api = axios.create({
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -35,7 +38,7 @@ api.interceptors.response.use(
         }
         
         // Try to get a new access token
-        const res = await axios.post('/api/auth/refresh', {
+        const res = await axios.post(`${API_URL}/api/auth/refresh`, {
           refreshToken,
         });
         

@@ -28,8 +28,19 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://referral-system-kappa.vercel.app"
+];
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" }
