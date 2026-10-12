@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #08245F; /* Navy for primary actions */
+  --color-primary-hover: #14357a;
+  
+  --color-secondary: #6F85C5; /* Periwinkle for selected states/secondary */
+  --color-secondary-50: #F0F4FA; /* Light periwinkle for active backgrounds */
+  
+  --color-warning: #F5B800; /* Golden Yellow for highlights */
+  
+  --color-background: #F5F4F0; /* Warm White for backgrounds */
+  
+  --color-navy: #08245F;
+  --color-periwinkle: #6F85C5;
+  
+  --font-sans: "Inter", "system-ui", "Avenir", "Helvetica", "Arial", sans-serif;
+  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--color-background);
+  color: #1e293b; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
